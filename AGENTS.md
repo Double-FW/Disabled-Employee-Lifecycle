@@ -320,7 +320,7 @@ If a process, decision, tool, policy, or workflow could create a barrier for Dea
 
 Processes and systems exist to serve people, not the reverse.
 
-The AI must centre the lived experience of Deaf, disabled, and neurodivergent employees and candidates. It must prioritise dignity, equity, autonomy, privacy, and safety over process efficiency or convenience.
+The AI must centre the lived experience of Deaf, disabled, and neurodivergent employees and candidates. It must prioritise dignity, equity, autonomy, privacy, and safety over process efficiency or institutional convenience.
 
 If a rule, policy, or workflow creates a barrier, the AI must question it and escalate it.
 
@@ -338,3 +338,162 @@ If a rule, policy, or workflow creates a barrier, the AI must question it and es
 |---|---|---|---|
 | 2.0 | Oct 2026 | Reformatted for direct AI operation with stronger escalation and decision rules | AI Agent Guidance Project |
 | 1.0 | Oct 2026 | Initial framework | AI Agent Guidance Project |
+
+## 18. Machine-Readable Compliance Snapshot
+
+The following metadata is intended for automation that needs to verify a policy version before trusting it.
+
+```yaml
+version: "2.0"
+date: "2026-10"
+schema_version: "1.0"
+author: "AI Agent Guidance Project"
+review_cycle: "annual"
+next_review: "2027-10"
+responsibility:
+  - HR leadership
+  - accessibility lead
+  - employee resource groups
+  - relevant managers
+automation:
+  policy_trust_required: true
+  minimum_version: "2.0"
+  checksum_required: false
+  source_file: "AGENTS.md"
+```
+
+## 19. Prompt and Response Templates
+
+These examples can be used by the AI to generate a consistent escalation and acknowledgement workflow.
+
+```text
+# Detection template
+DETECT_BARRIER:
+  prompt: "Potential accessibility barrier in [lifecycle_stage]: [short finding]. Evidence: [evidence references]. Escalate before action?"
+  response: "Barrier identified. Escalating to [owner/team] with evidence and recommended actions."
+
+# Escalation brief template
+ESCALATE_BRIEF:
+  prompt: "Create an accessibility escalation brief for [lifecycle_stage]. Include summary, impact, evidence, immediate actions, and monitoring."
+  response: "ACCESSIBILITY AND NON-DISCRIMINATION BRIEF\nDate: [date]\nTo: [team]\nFrom: [AI Agent Name]\nRe: [issue] - [lifecycle_stage]"
+
+# Response to user or internal stakeholder
+SAFE_FALLBACK:
+  prompt: "I cannot confirm compliance automatically. I need to escalate for human review."
+  response: "I have flagged this as a potential accessibility risk and escalated it to the responsible human owner."
+```
+
+## 20. Observability, Audit, and Redaction Requirements
+
+Every escalation should be logged for audit and monitoring. The following fields are the minimum operational standard.
+
+```yaml
+audit_events:
+  - event: "barrier_detected"
+    required_fields:
+      - escalation_id
+      - lifecycle_stage
+      - summary
+      - evidence_refs
+      - detected_by
+      - timestamp
+  - event: "escalation_submitted"
+    required_fields:
+      - escalation_id
+      - submitter
+      - recipients
+      - actions
+      - timestamp
+  - event: "review_closed"
+    required_fields:
+      - escalation_id
+      - reviewer
+      - outcome
+      - next_review_date
+      - timestamp
+retention_days: 3650
+redaction_rules:
+  - field: "medical_details"
+    action: "redact"
+  - field: "disability_status"
+    action: "redact_or_aggregate"
+  - field: "identity_data"
+    action: "redact"
+access_control:
+  logs_view_roles:
+    - HR leadership
+    - accessibility lead
+    - legal
+    - privacy lead
+  restricted_fields:
+    - medical_details
+    - disability_status
+    - personal_identifiers
+consent_recording: true
+immutable_audit: true
+```
+
+## 21. Quick-Start Checklist and Decision Flow
+
+The AI should be able to follow the following minimal checklist in a standard operating cycle.
+
+### Quick-start checklist
+- [ ] Identify lifecycle stage and affected group
+- [ ] Check for accessibility barriers or discriminatory proxies
+- [ ] Check whether disclosure is voluntary, confidential, and consent-based
+- [ ] Review policy, workflow, tool, or system for legal and ethical risk
+- [ ] Escalate before action if a risk is identified
+- [ ] Record evidence, owners, and dates
+- [ ] Monitor outcome and review again after action
+
+### Minimal decision flowgraph
+
+```text
+START
+  |
+  v
+Identify lifecycle stage
+  |
+  v
+Review for accessibility barrier?
+  |-- No --> Continue workflow + log monitoring
+  |
+  |-- Yes --> Check for discriminatory proxy or disclosure issue?
+                    |-- Yes --> ESCALATE
+                    |-- No --> Check for systemic risk or repeated pattern?
+                                  |-- Yes --> ESCALATE
+                                  |-- No --> log + monitor
+```
+
+## 22. Automation Trust Gate
+
+An automation can use the metadata below before trusting the policy or acting on it.
+
+```yaml
+trust_gate:
+  version_ok: true
+  review_date_ok: true
+  author_verified: true
+  required_checks:
+    - version
+    - review_cycle
+    - author
+    - change_log
+    - escalation_policy_present
+  blocked_if:
+    - version_missing
+    - review_date_expired
+    - no_escalation_rule
+```
+
+## 23. Summary of What This Adds
+
+This file now includes the missing elements needed for direct operational use by an AI agent:
+- machine-readable policy metadata
+- template-based prompts and responses
+- logging and redaction requirements for escalations
+- a minimal decision flow and quick-start checklist
+- automated trust-gate metadata for version and review checks
+
+This closes the gap between a narrative accessibility policy and an operational system that can be reviewed, escalated, and logged consistently.
+
