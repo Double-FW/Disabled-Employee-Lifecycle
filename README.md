@@ -18,6 +18,19 @@ Rather than treating accessibility as a series of isolated workplace adjustments
 
 The goal is to help organisations design employee experiences that remove barriers proactively, improve operational consistency, and enable disabled employees to participate, contribute, and progress equitably.
 
+## AI agent guidance
+
+This repository includes an [AGENTS.md](./AGENTS.md) file. It defines the expected operating principles for AI systems and automated assistants working in this project.
+
+The guidance is intended to ensure that any AI-assisted analysis, documentation updates, or policy recommendations:
+
+- treat accessibility and non-discrimination as core requirements, not optional features
+- identify barriers early and escalate issues to the appropriate human owners
+- protect disclosure, privacy, and confidentiality for disability-related information
+- align recommendations with legal, ethical, and inclusive HR practice
+
+Before making changes to project documentation or process recommendations, review [AGENTS.md](./AGENTS.md) so that AI-supported work remains consistent with the repository’s accessibility-first approach.
+
 ---
 
 # Why this matters
@@ -79,3 +92,4 @@ The framework is organised around six connected lifecycle phases:
 4. Day-to-Day Work and Enablement
 5. Career Development and Progression
 6. Exit and Alumni Engagement
+```
