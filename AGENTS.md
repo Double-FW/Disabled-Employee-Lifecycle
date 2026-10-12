@@ -1,7 +1,7 @@
 ---
 title: "AI Agent Guidance for Accessible HR Processes"
 version: "2.0"
-author: "AI Agent Guidance Project"
+author: "Double-FW, Gareth Ford Williams"
 date: "2026-10"
 license: "CC-BY-4.0"
 language: "en"
