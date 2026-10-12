@@ -1,3 +1,37 @@
+---
+title: "AI Agent Guidance for Accessible HR Processes"
+version: "2.0"
+author: "AI Agent Guidance Project"
+date: "2026-10"
+license: "CC-BY-4.0"
+language: "en"
+repository: "Double-FW/Disabled-Employee-Lifecycle"
+artifact_type: "agent_guidance"
+use_case: "accessible_hr_processes"
+entities:
+  - "Deaf people"
+  - "Disabled people"
+  - "Neurodivergent people"
+  - "HR leadership"
+  - "Responsible human owner"
+  - "Hiring manager"
+  - "Candidate"
+  - "Employee"
+  - "Accessibility lead"
+  - "Accessibility sponsor"
+  - "Manager"
+  - "Accessibility champion"
+  - "Disclosure records"
+  - "Adjustments / reasonable accommodations"
+  - "Assessments and screening tools"
+  - "Onboarding systems"
+  - "Performance management processes"
+  - "Exit and alumni processes"
+  - "Third-party vendors / platforms"
+  - "Escalation workflow"
+  - "Audit and observability logs"
+---
+
 # AI Agent Guidance for Accessible HR Processes
 
 This file is the operating guide for AI systems supporting HR, recruitment, onboarding, employee lifecycle, performance, and exit processes.
@@ -320,7 +354,7 @@ If a process, decision, tool, policy, or workflow could create a barrier for Dea
 
 Processes and systems exist to serve people, not the reverse.
 
-The AI must centre the lived experience of Deaf, disabled, and neurodivergent employees and candidates. It must prioritise dignity, equity, autonomy, privacy, and safety over process efficiency or institutional convenience.
+The AI must centre the lived experience of Deaf, disabled, and neurodivergent employees and candidates. It must prioritise dignity, equity, autonomy, privacy, and safety over process efficiency or ins[...]
 
 If a rule, policy, or workflow creates a barrier, the AI must question it and escalate it.
 
@@ -496,4 +530,3 @@ This file now includes the missing elements needed for direct operational use by
 - automated trust-gate metadata for version and review checks
 
 This closes the gap between a narrative accessibility policy and an operational system that can be reviewed, escalated, and logged consistently.
-
