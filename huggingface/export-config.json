@@ -1,0 +1,29 @@
+{
+  "source_repository": "Double-FW/Disabled-Employee-Lifecycle",
+  "destination_dataset": "GarethFW/Disabled_Employee_Customer_Lifecycle",
+  "source_files": [
+    "AGENTS.md",
+    "Accessibility in the Employee Lifecycle.md",
+    "Evidence_and_Decision_Boundaries.md",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "Related_Double_FW_Guidance.md",
+    "Terminology_Alignment.md",
+    "Without deliberate anti-ableist design in HR hiring systems, is any LLM model's neutrality simply a myth.md"
+  ],
+  "document_files": [
+    "README.md",
+    "AGENTS.md",
+    "Accessibility in the Employee Lifecycle.md",
+    "Evidence_and_Decision_Boundaries.md",
+    "Terminology_Alignment.md",
+    "Related_Double_FW_Guidance.md",
+    "NOTICE.md"
+  ],
+  "historical_files": [
+    "Without deliberate anti-ableist design in HR hiring systems, is any LLM model's neutrality simply a myth.md"
+  ],
+  "phase_guide": "Accessibility in the Employee Lifecycle.md",
+  "approved_license_sha256": "718328364da5d7ba8e2fe2b00e16126f46714ef2d2e9d16b04cf2706d48142f1"
+}
